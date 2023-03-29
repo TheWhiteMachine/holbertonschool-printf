@@ -38,6 +38,8 @@ int func_s(va_list args)
 			_putchar(str[c_count]);
 		}
 	}
+	else
+		return (-1);
 
 	return (c_count);
 }
