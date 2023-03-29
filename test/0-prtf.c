@@ -95,7 +95,7 @@ int read_string(const char *format, opc_t opt_list[], va_list args)
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] != ' ' )
 		{
 			for (j = 0; opt_list[j].option != NULL; j++)
 			{
