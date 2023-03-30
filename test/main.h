@@ -23,7 +23,7 @@ int _printf(const char *format, ...);
 typedef struct ops
 {
 		char *option;
-		int (*get_func)(va_list args);
+		int (*get_func)();
 } opc_t;
 
 
