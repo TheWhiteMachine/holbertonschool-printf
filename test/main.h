@@ -32,7 +32,6 @@ int func_c(va_list args);
 int func_s(va_list args);
 int func_percent(__attribute__((unused))va_list args);
 int func_i(va_list args);
-int func_d(va_list args);
 
 
 #endif
