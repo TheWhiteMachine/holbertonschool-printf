@@ -19,12 +19,12 @@ int read_string (const char *format, opc_t opt_list[], va_list args)
 /* start reading formated stirng*/
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		/* case to find a % and theres a letter after*/
+		/*find a % and after there arent a blank*/
 		if (format[i] == '%' && format[i + 1] != ' ')
 		{
-			/*if a & sing is the last character not to print and return an error*/
-			if (format[i + 1] == '\0')
+			if (format[i] == '%' && format[i + 1] == '\0')
 				return (-1);
+		
 			/*search the letter after % to find coincidence in option list*/
 			for (j = 0; opt_list[j].option != NULL; j++)
 			{
@@ -56,6 +56,7 @@ int read_string (const char *format, opc_t opt_list[], va_list args)
 			/*find a character difrent to % and print it  DIRECT PRINT*/
 			c_count += _putchar(format[i]);
 		}
+
 	}
 	/* take the printed charracters for functions and the direct print and join them*/
 
