@@ -17,7 +17,7 @@ int _printf(const char *format, ...);
 /**
 * struct ops - Struct options
 * @option: Options
-* @f: Function asociated
+* @get_func: Function asociated
 */
 
 typedef struct ops
@@ -27,7 +27,7 @@ typedef struct ops
 } opc_t;
 
 
-int read_string( const char *format, opc_t[], va_list args);
+int read_string(const char *format, opc_t[], va_list args);
 int func_c(va_list args);
 int func_s(va_list args);
 int func_percent(__attribute__((unused))va_list args);

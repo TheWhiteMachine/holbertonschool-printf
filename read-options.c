@@ -35,8 +35,7 @@ int read_string(const char *format, opc_t opt_list[], va_list args)
 					error_c = opt_list[j].get_func(args);
 					if (error_c > 0)
 						/*copy character cout of function */
-						c_func = error_c, /* pas to next character on formated sring*/i++;
-					break;
+						c_func = error_c, /* pas to next character on formated sring*/i++, break;
 				}
 			}
 			c_count += c_func;
@@ -45,11 +44,10 @@ int read_string(const char *format, opc_t opt_list[], va_list args)
 				c_count += _putchar(format[i]);
 		}
 		else
-		{
-			/*find a character difrent to % and print it  DIRECT PRINT*/
+		/*find a character difrent to % and print it  DIRECT PRINT*/
 			c_count += _putchar(format[i]);
-		}
-		if(format[i] == '5' && format[i + 1] == '\0')
+
+		if (format[i] == '5' && format[i + 1] == '\0')
 			return (-1);
 
 	}
