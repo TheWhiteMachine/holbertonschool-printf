@@ -30,21 +30,21 @@ int func_c(va_list args)
 int func_s(va_list args)
 {
 	char *str;
-	int c_count;
+	int c = 0;
 
-	str = va_arg(args, char*);
+	str = va_arg(args,char*);
 	if (str != NULL)
 	{
 
-		for (c_count = 0; str[c_count] != '\0'; c_count++)
+		for (c = 0; str[c] != '\0'; c++)
 		{
-			_putchar(str[c_count]);
+			_putchar(str[c]);
 		}
 	}
 	else
 		return (-1);
 
-	return (c_count);
+	return (c);
 }
 
 
@@ -69,8 +69,10 @@ int func_i(va_list args)
 {
 
 	int numarg = va_arg(args, int);
-	int i, c_count = 0;
-	int num, acc;
+	int i =0;
+	int c_count = 0;
+	int num = 0;
+	int acc = 0;
 
 	if (!numarg)
 		return (-1);
@@ -85,7 +87,7 @@ int func_i(va_list args)
 	acc = num % 10;
 	for (i = 1; num > 0; i++)
 	{
-		num = num / 10;
+		num /= 10;
 		if  (num >= 0)
 		{
 			acc *= 10;
@@ -95,12 +97,12 @@ int func_i(va_list args)
 			acc += num;
 	}
 	_putchar(acc % 10);
-	c_count += 1;
+	c_count++;
 	for (; i > 1; i--)
 	{
-		acc = acc / 10;
+		acc /= 10;
 		_putchar(acc % 10 + '0');
-		c_count += 1;
+		c_count++;
 	}
 	return (c_count);
 }
@@ -118,7 +120,7 @@ int read_string (const char *format, opc_t opt_list[], va_list args)
 {
 	int i, j;
 	int c_count;
-	int total;
+	
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -136,21 +138,20 @@ int read_string (const char *format, opc_t opt_list[], va_list args)
 					}
 					else
 						i++;
-					total += c_count;
 					break;
 				}
 			}
 			if (opt_list[j].option == NULL)
 			{
 				_putchar(format[i]);
-				total += 1;
+				c_count += 1;
 			}
 		}
 		else
 		{
 			_putchar(format[i]);
-			total += 1;
+			c_count += 1;
 		}
 	}
-	return (total);
+	return (c_count);
 }
