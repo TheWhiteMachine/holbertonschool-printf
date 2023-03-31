@@ -44,7 +44,7 @@ int func_s(va_list args)
 	else
 	{
 		write(1,"(null)",6);
-		return(6);
+		return(-3);
 	}
 
 
@@ -72,10 +72,10 @@ int func_percent(__attribute__((unused))va_list args)
 int func_i(va_list args)
 {
 
-	int numarg = va_arg(args, int);
+	long numarg = va_arg(args, int);
 	int i =0;
 	int c_count = 0;
-	int num = 0;
+	long num = 0;
 	int acc = 0;
 
 	if (!numarg)
