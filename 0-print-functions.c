@@ -3,8 +3,9 @@
 #include "main.h"
 #include <stdarg.h>
 /**
- * _func_c - print a char
+ * func_c - print a char
  * @args: list of printf args
+ * Return: 1 per cahr and -2 on null
  */
 
 int func_c(va_list args)
@@ -26,6 +27,7 @@ int func_c(va_list args)
 /**
  * func_s - print a string
  * @args: list of printf args
+ * Return: number of printed chars (null) on NULL
  */
 int func_s(va_list args)
 {
@@ -43,7 +45,7 @@ int func_s(va_list args)
 	}
 	else
 	{
-		write (1,"(null)", 6);
+		write(1, "(null)", 6);
 		return (6);
 	}
 
@@ -53,8 +55,9 @@ int func_s(va_list args)
 
 
 /**
- * func_perenct - print a percetn sign
+ * func_percent - print a percetn sign
  * @args: list of printf args
+ * Return: 1;
  */
 
 int func_percent(__attribute__((unused))va_list args)
@@ -67,6 +70,7 @@ int func_percent(__attribute__((unused))va_list args)
 /**
  * func_i - print a int number
  * @args: int args of printf
+ * Return: number of printed digits
  */
 
 int func_i(va_list args)
@@ -108,6 +112,6 @@ int func_i(va_list args)
 		_putchar(acc % 10 + '0');
 		c_count++;
 	}
-	return (c_count -1);
+	return (c_count - 1);
 }
 

@@ -17,7 +17,7 @@ int _printf(const char *format, ...);
 /**
 * struct ops - Struct options
 * @option: Options
-* @f: Function asociated
+* @get_func: Function asociated
 */
 
 typedef struct ops
