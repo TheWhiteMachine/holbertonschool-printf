@@ -119,7 +119,8 @@ int func_i(va_list args)
 int read_string (const char *format, opc_t opt_list[], va_list args)
 {
 	int i, j;
-	int c_count;
+	int c_count = 0;
+	int c_func = 0;
 	
 
 	for (i = 0; format[i] != '\0'; i++)
@@ -131,8 +132,8 @@ int read_string (const char *format, opc_t opt_list[], va_list args)
 
 				if (format[i + 1] == opt_list[j].option[0])
 				{
-					c_count = opt_list[j].get_func(args);
-					if (c_count == -1)
+					c_func = opt_list[j].get_func(args);
+					if (c_func == -1)
 					{
 						return (-1);
 					}
@@ -153,5 +154,6 @@ int read_string (const char *format, opc_t opt_list[], va_list args)
 			c_count += 1;
 		}
 	}
+	c_count += c_func;
 	return (c_count);
 }
