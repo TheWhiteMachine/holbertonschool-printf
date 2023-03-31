@@ -2,7 +2,6 @@
 #include <unistd.h>
 #include "main.h"
 #include <stdarg.h>
-
 /**
  * read_string - read format and choose function to execute
  * @format: text and modificators to printf
@@ -10,7 +9,6 @@
  * @args: va_list of arguments of printf
  * Return: count of characters
  */
-
 int read_string(const char *format, opc_t opt_list[], va_list args)
 {
 	int i, j;
@@ -20,7 +18,6 @@ int read_string(const char *format, opc_t opt_list[], va_list args)
 	/* start reading formated stirng*/
 	for (i = 0; format[i] != '\0'; i++)
 	{
-
 		/*find a % and after there arent a blank*/
 		if (format[i] == '%' && format[i + 1] != ' ')
 		{
@@ -47,11 +44,8 @@ int read_string(const char *format, opc_t opt_list[], va_list args)
 
 		}
 		else
-		{
-			/*find a character difrent to % and print it  DIRECT PRINT*/
-			c_count += _putchar(format[i]);
-		}
-
+		/*find a character difrent to % and print it  DIRECT PRINT*/
+			c_count += _putchar(format[i]);	
 	}
 	return (c_count);
 }
