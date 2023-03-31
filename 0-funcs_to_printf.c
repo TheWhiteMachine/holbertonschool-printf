@@ -76,7 +76,7 @@ int func_i(va_list args)
 	int i =0;
 	int c_count = 0;
 	long num = 0;
-	int acc = 0;
+	long acc = 0;
 
 	if (!numarg)
 		return (-1);
