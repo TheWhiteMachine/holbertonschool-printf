@@ -35,7 +35,8 @@ int read_string(const char *format, opc_t opt_list[], va_list args)
 					error_c = opt_list[j].get_func(args);
 					if (error_c > 0)
 						/*copy character cout of function */
-						c_func = error_c, /* pas to next character on formated sring*/i++, break;
+						c_func = error_c, /* pas to next character on formated sring*/i++;
+					break;
 				}
 			}
 			c_count += c_func;
