@@ -44,7 +44,7 @@ int func_s(va_list args)
 	else
 	{
 		write(1,"(null)",6);
-		return(-3);
+		return(6);
 	}
 
 
@@ -72,11 +72,11 @@ int func_percent(__attribute__((unused))va_list args)
 int func_i(va_list args)
 {
 
-	long numarg = va_arg(args, int);
+	long int numarg = va_arg(args, int);
 	int i =0;
 	int c_count = 0;
-	long num = 0;
-	long acc = 0;
+	long int num = 0;
+	long int acc = 0;
 
 	if (!numarg)
 		return (-1);
@@ -145,6 +145,7 @@ int read_string (const char *format, opc_t opt_list[], va_list args)
 					error_c = opt_list[j].get_func(args);
 					if (error_c > 0)
 					{
+						/*copy character cout of function in c_func knowing that dont have errors reported*/
 						c_func = error_c;
 						/* pas to next character on formated sring*/
 						i++;
