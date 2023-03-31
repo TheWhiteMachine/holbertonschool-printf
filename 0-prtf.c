@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	int printed = 0;
-
+	int error = 0;
 	va_list args;
 
 	opc_t opt_list[] = {
@@ -28,9 +28,11 @@ int _printf(const char *format, ...)
 	}
 
 	va_start(args, format);
-	
-	printed = read_string(format, opt_list, args);
-	
+	error =  read_string(format, opt_list, args);
+
+	if (error > 0)
+		printed = error;
+
 	va_end(args);
 
 	return (printed);
