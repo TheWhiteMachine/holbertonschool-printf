@@ -1,10 +1,4 @@
-# holbertonschool-printf
-Printf Projecto at Holberton School
-
-Team
-
-Pablo Riveiro
-iking a printf function at holberton school
+### A printf function at holberton school
 
 ## Installation
 
