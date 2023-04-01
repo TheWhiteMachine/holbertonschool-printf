@@ -1,4 +1,6 @@
-### A printf function at holberton school
+# _Printf
+
+Making a printf function at holberton school
 
 ## Installation
 
