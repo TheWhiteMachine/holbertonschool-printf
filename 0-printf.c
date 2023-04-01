@@ -29,8 +29,17 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 	error =  read_string(format, opt_list, args);
+
 	if (error == -1)
+		return (1);
+	if (error == -2)
+		return (1);
+	if (error == -3)
 		return (-1);
+	if (error == -4)
+		return (0);
+	if (error == 0)
+		return (1);
 	if (error > 0)
 		printed = error;
 

@@ -82,8 +82,15 @@ int func_i(va_list args)
 	long int num = 0;
 	long int acc = 0;
 
+
 	if (!numarg)
-		return (-1);
+	{
+		_putchar('0');
+		return (0);
+	}	
+
+	if (numarg == 0)
+		return (0);
 
 	if (numarg < 0)
 	{
