@@ -6,13 +6,8 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <limits.h>
 #include <string.h>
-
-
-int _putchar(char c);
-int _printf(const char *format, ...);
-
-
 
 /**
 * struct ops - Struct options
@@ -27,6 +22,8 @@ typedef struct ops
 } opc_t;
 
 
+int _putchar(char c);
+int _printf(const char *format, ...);
 int read_string(const char *format, opc_t[], va_list args);
 int func_c(va_list args);
 int func_s(va_list args);
