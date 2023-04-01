@@ -39,7 +39,7 @@ int read_string(const char *format, opc_t opt_list[], va_list args)
 						return (-1);
 				break;																}
 			}
-			c_count += c_func;														if (opt_list[j].option == NULL)
+			c_count += c_func;														if (opt_list[j].option == NULL && format[i] != '\0')
 			{
 				c_count += _putchar(format[i]);
 			}
