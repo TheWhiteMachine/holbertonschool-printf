@@ -4,7 +4,7 @@ Making a printf function at holberton school
 
 ## Installation
 
-clone the repository, end use this flags to compilate the functions, add a main.c exaple to see it work with examples just like original printf.
+clone the repository, end use this flags to compilate the functions, add a main.c with cases to see it work with examples just like original printf.
 
 ```bash
 $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
@@ -23,6 +23,7 @@ _printf("%d", decimalv)
 
 # returns the format indicated at first string with mixed content
 _printf("Hola %i orientales, hoy es %s", numero, dia)
+
 # whien var numero has a 33 value and var dia has the word Martes
 Hola 33 orientales, hoy es Martes
 `````
