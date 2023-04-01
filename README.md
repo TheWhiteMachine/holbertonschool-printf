@@ -2,6 +2,9 @@
 
 Making a printf function at holberton school
 
+![5144313](https://user-images.githubusercontent.com/58869893/229312957-ffc049e8-153f-4c54-b1cb-6690606443c0.jpg)
+
+
 ## Installation
 
 clone the repository, end use this flags to compilate the functions, add a main.c with cases to see it work with examples just like original printf.
