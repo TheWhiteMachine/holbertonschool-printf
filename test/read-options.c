@@ -17,34 +17,29 @@ int read_string(const char *format, opc_t opt_list[], va_list args)
 	int c_count = 0;
 	int c_func = 0;
 	int error_c = 0;
-
 	for (i = 0; format[i] != '\0'; i++)
 	{
-
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] != ' ')
 		{
 			if (format[i + 1] == '\0')
-				return (-1);
+			return (-1);
 			for (j = 0; opt_list[j].option != NULL; j++)
 			{
+				if (format[i + 1] == opt_list[j].option[0])
+				{
 					error_c = opt_list[j].get_func(args);
 					if (error_c > 0)
 					{
 						c_func = error_c;
-					i++;
+						i++;
 					}
-					break;
+				break;																}
 			}
-			c_count += c_func;
-			if (opt_list[j].option == NULL)
+			c_count += c_func;														if (opt_list[j].option == NULL)
 				c_count += _putchar(format[i]);
-
 		}
 		else
-		{
 			c_count += _putchar(format[i]);
-		}
-
 	}
 	return (c_count);
 }
