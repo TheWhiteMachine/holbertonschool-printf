@@ -1,0 +1,19 @@
+Manpage for _printf
+.TH man__printf
+
+.SH NAME
+_printf
+.SH SYNOPSIS
+_int printf(const char *restrict format, ...);
+.SH DESCRIPTION
+The function produce an output acording to a given format.
+.SH OPTIONS
+.ss c: print a char
+.ss s: print a strint
+.ss i: print a integer value
+.ss d: print a decimal value
+.ss %: print a % charater if a seccond % char is found
+.SH BUGS
+actually testing 1 bug in the count characters script
+.SH AUTHORS
+Pablo Riveiro, Lauro Villagra
