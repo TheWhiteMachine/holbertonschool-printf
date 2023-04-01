@@ -19,10 +19,10 @@ int read_string(const char *format, opc_t opt_list[], va_list args)
 	int error_c = 0;
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] == '%' && format[i + 1] != ' ')
+		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
-			return (-1);
+				return (-1);
 			for (j = 0; opt_list[j].option != NULL; j++)
 			{
 				if (format[i + 1] == opt_list[j].option[0])
