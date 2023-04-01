@@ -22,7 +22,7 @@ int read_string(const char *format, opc_t opt_list[], va_list args)
 	{
 
 		/*find a % and after there arent a blank*/
-		if (format[i] == '%' && format[i + 1] != ' ')
+		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
 				return (-1);
