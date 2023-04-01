@@ -12,8 +12,8 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 
 ## Usage
 
-```c
-import foobar
+```Python
+
 
 # returns the content of a string var
 _printf("%s", stringVar)
