@@ -45,7 +45,8 @@ int read_string(const char *format, opc_t opt_list[], va_list args)
 			}
 		}
 		else
-			c_count += _putchar(format[i]);
+			if (format[i] != '\0')
+				c_count += _putchar(format[i]);
 	}
 	return (c_count);
 }
