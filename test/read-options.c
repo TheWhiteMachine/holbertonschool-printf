@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include "main.h"
 #include <stdarg.h>
+
 /**
  * read_string - read format and choose function to execute
  * @format: text and modificators to printf
@@ -9,6 +10,7 @@
  * @args: va_list of arguments of printf
  * Return: count of characters
  */
+
 int read_string(const char *format, opc_t opt_list[], va_list args)
 {
 	int i, j;
@@ -18,6 +20,7 @@ int read_string(const char *format, opc_t opt_list[], va_list args)
 	/* start reading formated stirng*/
 	for (i = 0; format[i] != '\0'; i++)
 	{
+
 		/*find a % and after there arent a blank*/
 		if (format[i] == '%' && format[i + 1] != ' ')
 		{
@@ -32,20 +35,27 @@ int read_string(const char *format, opc_t opt_list[], va_list args)
 					/*call the function nnd add characters*/
 					error_c = opt_list[j].get_func(args);
 					if (error_c > 0)
+					{
 						/*copy character cout of function */
-						c_func = error_c, /* pas to next character on formated sring*/i++;
+						c_func = error_c;
+					/* pass to next character on formated sring**/
+					i++;
+					}
 					break;
 				}
 			}
 			c_count += c_func;
-			/*no coincidence at the option list, print any */
+			/*no coincidence at the option list, print any and count */
 			if (opt_list[j].option == NULL)
 				c_count += _putchar(format[i]);
 
 		}
 		else
-		/*find a character difrent to % and print it  DIRECT PRINT*/
-			c_count += _putchar(format[i]);	
+		{
+			/*find a character difrent to % and print it  DIRECT PRINT*/
+			c_count += _putchar(format[i]);
+		}
+
 	}
 	return (c_count);
 }

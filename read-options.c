@@ -35,13 +35,17 @@ int read_string(const char *format, opc_t opt_list[], va_list args)
 					/*call the function nnd add characters*/
 					error_c = opt_list[j].get_func(args);
 					if (error_c > 0)
+					{
 						/*copy character cout of function */
-						c_func = error_c, /* pas to next character on formated sring*/i++;
+						c_func = error_c;
+					/* pass to next character on formated sring**/
+					i++;
+					}
 					break;
 				}
 			}
 			c_count += c_func;
-			/*no coincidence at the option list, print any */
+			/*no coincidence at the option list, print any and count */
 			if (opt_list[j].option == NULL)
 				c_count += _putchar(format[i]);
 
