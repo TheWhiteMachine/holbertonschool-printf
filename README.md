@@ -49,7 +49,3 @@ print % character
 
 Pablo Riveiro y Lauro Villagra
 
-Please make sure to update tests as 
-````
-````
-````
