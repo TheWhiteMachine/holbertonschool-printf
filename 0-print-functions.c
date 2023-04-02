@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <unistd.h>
 #include "main.h"
-#include <stdarg.h>
 /**
  * func_c - print a char
  * @args: list of printf args
@@ -49,7 +46,6 @@ int func_s(va_list args)
 		return (6);
 	}
 
-
 	return (c);
 }
 
@@ -75,50 +71,34 @@ int func_percent(__attribute__((unused))va_list args)
 
 int func_i(va_list args)
 {
+	long int num = va_arg(args, int);
 
-	long int numarg = va_arg(args, int);
-	int i = 0;
+	int long digits = 1;
+
 	int c_count = 0;
-	long int num = 0;
-	long int acc = 0;
 
-
-	if (!numarg)
+	if (!num)
 	{
 		_putchar('0');
 		return (0);
-	}	
-
-	if (numarg == 0)
+	}
+	if (num == 0)
 		return (0);
 
-	if (numarg < 0)
+	if (num < 0)
 	{
 		_putchar('-');
 		c_count += 1;
-		numarg *= -1;
+		num *= -1;
 	}
-	num = numarg;
-	acc = num % 10;
-	for (i = 1; num > 0; i++)
-	{
-		num /= 10;
-		if  (num >= 0)
-		{
-			acc *= 10;
-			acc += num % 10;
-		}
-		else
-			acc += num;
-	}
-	_putchar(acc % 10);
-	c_count++;
-	for (; i > 1; i--)
-	{
-		acc /= 10;
-		_putchar(acc % 10 + '0');
+	for (; digits <= num; digits *= 10)
 		c_count++;
-	}
-	return (c_count - 1);
+
+	digits /= 10;
+
+	for (; digits > 0; digits /= 10)
+		_putchar(((num / digits) % 10) + '0');
+
+	return (c_count);
 }
 

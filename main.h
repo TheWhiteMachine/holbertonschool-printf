@@ -9,15 +9,14 @@
 #include <string.h>
 
 
-int _putchar(char c);
 int _printf(const char *format, ...);
 
 
 
 /**
-* struct ops - Struct options
-* @option: Options
-* @get_func: Function asociated
+* struct ops - Struct for options and functions
+* @option: String representing Options
+* @get_func: poiter to Function asociated
 */
 
 typedef struct ops
@@ -27,6 +26,7 @@ typedef struct ops
 } opc_t;
 
 
+int _putchar(char c);
 int read_string(const char *format, opc_t[], va_list args);
 int func_c(va_list args);
 int func_s(va_list args);

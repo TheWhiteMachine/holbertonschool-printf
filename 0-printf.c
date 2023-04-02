@@ -1,10 +1,9 @@
-#include <stdio.h>
-#include <unistd.h>
 #include "main.h"
-#include <stdarg.h>
+
 /**
  * _printf - print varius formats of data
  * @format: a formated string to print
+ * Return: error messages or char printed count
  */
 
 int _printf(const char *format, ...)

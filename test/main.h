@@ -6,13 +6,17 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <limits.h>
 #include <string.h>
 
+
+int _printf(const char *format, ...);
+
+
+
 /**
-* struct ops - Struct options
-* @option: Options
-* @get_func: Function asociated
+* struct ops - Struct for options and functions
+* @option: String representing Options
+* @get_func: poiter to Function asociated
 */
 
 typedef struct ops
@@ -23,12 +27,12 @@ typedef struct ops
 
 
 int _putchar(char c);
-int _printf(const char *format, ...);
 int read_string(const char *format, opc_t[], va_list args);
 int func_c(va_list args);
 int func_s(va_list args);
 int func_percent(__attribute__((unused))va_list args);
 int func_i(va_list args);
+int func_d(va_list args);
 
 
 #endif

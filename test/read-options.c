@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <unistd.h>
 #include "main.h"
-#include <stdarg.h>
 
 /**
  * read_string - read format and choose function to execute
@@ -17,6 +14,7 @@ int read_string(const char *format, opc_t opt_list[], va_list args)
 	int c_count = 0;
 	int c_func = 0;
 	int error_c = 0;
+
 	if (format[0] == 0)
 		return (-4);
 	for (i = 0; format[i] != '\0'; i++)
@@ -37,16 +35,17 @@ int read_string(const char *format, opc_t opt_list[], va_list args)
 					}
 					else
 						return (-1);
-				break;																}
+				break;
+				}
 			}
-			c_count += c_func;														if (opt_list[j].option == NULL && format[i] != '\0')
+			c_count += c_func;
+			if (opt_list[j].option == NULL)
 			{
 				c_count += _putchar(format[i]);
 			}
 		}
 		else
-			if (format[i] != '\0')
-				c_count += _putchar(format[i]);
+			c_count += _putchar(format[i]);
 	}
 	return (c_count);
 }
