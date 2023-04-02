@@ -33,24 +33,14 @@ int read_string(const char *format, opc_t opt_list[], va_list args)
 						c_func = error_c, i++;
 					}
 					else
-						return (-1);
+						return (error_c);
 				break;
 				}
 			}
-			if (opt_list[j].option == NULL && format[i + 1] != ' ')
-			{
-				if (format[i + 1] != '\0')
-				{
-					c_count--;
-				/*	_putchar(format[i + 1]);
-					c_count += 2;*/
-				}
-			else
-				return (-1);
-			}
-			c_count += c_func;
 			if (opt_list[j].option == NULL)
-				c_count +=_putchar(format[i]);
+				c_count += _putchar(format[i]) / 2;
+
+			c_count += c_func;
 		}
 		else
 			c_count += _putchar(format[i]);
