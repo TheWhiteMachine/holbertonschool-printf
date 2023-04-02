@@ -38,7 +38,7 @@ int read_string(const char *format, opc_t opt_list[], va_list args)
 				}
 			}
 			if (opt_list[j].option == NULL)
-				c_count += _putchar(format[i]) / 2;
+				c_count += _putchar(format[i]);
 
 			c_count += c_func;
 		}
