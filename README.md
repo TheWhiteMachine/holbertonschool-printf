@@ -4,6 +4,10 @@ Making a printf function at holberton school
 
 ![5144313](https://user-images.githubusercontent.com/58869893/229312957-ffc049e8-153f-4c54-b1cb-6690606443c0.jpg)
 
+## Desscription
+
+the program receives a complex format that combines simple text with dynamic content housed in variables of different types to be printed on the screen.
+It prints them in the indicated format and returns the number of characters printed.
 
 ## Installation
 
@@ -44,6 +48,9 @@ print a string
 print % character
 
 `````
+## Our flowchart
+
+![Printf holberton](https://user-images.githubusercontent.com/58869893/229386768-ffd83ebe-745c-49fd-b73f-da0ee6442931.png)
 
 ## Authors
 
